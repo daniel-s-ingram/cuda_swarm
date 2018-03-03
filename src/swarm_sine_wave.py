@@ -19,24 +19,8 @@ z = 0
 A = 0.5
 
 while not rospy.is_shutdown():
-	for i in xrange(5):
-		swarm_msg[i].pose.position.z = A*sin(z)+2
-		swarm_pub[i].publish(swarm_msg[i])
-
-	for i in xrange(5, 10):
-		swarm_msg[i].pose.position.z = A*sin(z+1)+2
-		swarm_pub[i].publish(swarm_msg[i])
-
-	for i in xrange(10, 15):
-		swarm_msg[i].pose.position.z = A*sin(z+2)+2
-		swarm_pub[i].publish(swarm_msg[i])
-
-	for i in xrange(15, 20):
-		swarm_msg[i].pose.position.z = A*sin(z+3)+2
-		swarm_pub[i].publish(swarm_msg[i])
-
-	for i in xrange(20, 25):
-		swarm_msg[i].pose.position.z = A*sin(z+4)+2
+	for i in xrange(25):
+		swarm_msg[i].pose.position.z = A*sin(z+i)+2
 		swarm_pub[i].publish(swarm_msg[i])
 		
 	z = z + 0.01
