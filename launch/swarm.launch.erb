@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+	<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+
+	<%
+	for i in 0..0
+		for j in 0..9%>
+			<group ns="quadrotor<%=(10*i+j)%>">
+				<node name="urdf_spawner<%=(10*i+j)%>" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor<%=(10*i+j)%> -param robot_description -x <%=i%> -y <%=j%>"/>
+			</group>
+		<%end
+	end
+	%>
+
+	<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+</launch>

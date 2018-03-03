@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<launch>
+	<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+
+	
+			<group ns="quadrotor0">
+				<node name="urdf_spawner0" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor0 -param robot_description -x 0 -y 0"/>
+			</group>
+		
+			<group ns="quadrotor1">
+				<node name="urdf_spawner1" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor1 -param robot_description -x 0 -y 1"/>
+			</group>
+		
+			<group ns="quadrotor2">
+				<node name="urdf_spawner2" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor2 -param robot_description -x 0 -y 2"/>
+			</group>
+		
+			<group ns="quadrotor3">
+				<node name="urdf_spawner3" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor3 -param robot_description -x 0 -y 3"/>
+			</group>
+		
+			<group ns="quadrotor4">
+				<node name="urdf_spawner4" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor4 -param robot_description -x 0 -y 4"/>
+			</group>
+		
+			<group ns="quadrotor5">
+				<node name="urdf_spawner5" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor5 -param robot_description -x 0 -y 5"/>
+			</group>
+		
+			<group ns="quadrotor6">
+				<node name="urdf_spawner6" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor6 -param robot_description -x 0 -y 6"/>
+			</group>
+		
+			<group ns="quadrotor7">
+				<node name="urdf_spawner7" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor7 -param robot_description -x 0 -y 7"/>
+			</group>
+		
+			<group ns="quadrotor8">
+				<node name="urdf_spawner8" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor8 -param robot_description -x 0 -y 8"/>
+			</group>
+		
+			<group ns="quadrotor9">
+				<node name="urdf_spawner9" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+					args="-urdf -model quadrotor9 -param robot_description -x 0 -y 9"/>
+			</group>
+		
+
+	<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+</launch>
