@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 
 <launch>
-	<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
-
 	<group ns="quadrotor0">
 		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
 		<node name="urdf_spawner0" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
