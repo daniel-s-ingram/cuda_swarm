@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
+	<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
 
 	<group ns="quadrotor0">
 		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
@@ -152,6 +153,4 @@
 			args="-urdf -model quadrotor24 -param robot_description -x 4 -y 4"/>
 				</group>
 
-
-	<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
 </launch>

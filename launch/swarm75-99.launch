@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+
+<launch>
+	<group ns="quadrotor75">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner75" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor75 -param robot_description -x 15 -y 0"/>
+				</group>
+
+	<group ns="quadrotor76">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner76" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor76 -param robot_description -x 15 -y 1"/>
+				</group>
+
+	<group ns="quadrotor77">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner77" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor77 -param robot_description -x 15 -y 2"/>
+				</group>
+
+	<group ns="quadrotor78">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner78" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor78 -param robot_description -x 15 -y 3"/>
+				</group>
+
+	<group ns="quadrotor79">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner79" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor79 -param robot_description -x 15 -y 4"/>
+				</group>
+
+	<group ns="quadrotor80">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner80" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor80 -param robot_description -x 16 -y 0"/>
+				</group>
+
+	<group ns="quadrotor81">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner81" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor81 -param robot_description -x 16 -y 1"/>
+				</group>
+
+	<group ns="quadrotor82">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner82" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor82 -param robot_description -x 16 -y 2"/>
+				</group>
+
+	<group ns="quadrotor83">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner83" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor83 -param robot_description -x 16 -y 3"/>
+				</group>
+
+	<group ns="quadrotor84">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner84" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor84 -param robot_description -x 16 -y 4"/>
+				</group>
+
+	<group ns="quadrotor85">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner85" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor85 -param robot_description -x 17 -y 0"/>
+				</group>
+
+	<group ns="quadrotor86">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner86" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor86 -param robot_description -x 17 -y 1"/>
+				</group>
+
+	<group ns="quadrotor87">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner87" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor87 -param robot_description -x 17 -y 2"/>
+				</group>
+
+	<group ns="quadrotor88">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner88" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor88 -param robot_description -x 17 -y 3"/>
+				</group>
+
+	<group ns="quadrotor89">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner89" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor89 -param robot_description -x 17 -y 4"/>
+				</group>
+
+	<group ns="quadrotor90">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner90" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor90 -param robot_description -x 18 -y 0"/>
+				</group>
+
+	<group ns="quadrotor91">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner91" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor91 -param robot_description -x 18 -y 1"/>
+				</group>
+
+	<group ns="quadrotor92">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner92" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor92 -param robot_description -x 18 -y 2"/>
+				</group>
+
+	<group ns="quadrotor93">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner93" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor93 -param robot_description -x 18 -y 3"/>
+				</group>
+
+	<group ns="quadrotor94">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner94" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor94 -param robot_description -x 18 -y 4"/>
+				</group>
+
+	<group ns="quadrotor95">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner95" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor95 -param robot_description -x 19 -y 0"/>
+				</group>
+
+	<group ns="quadrotor96">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner96" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor96 -param robot_description -x 19 -y 1"/>
+				</group>
+
+	<group ns="quadrotor97">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner97" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor97 -param robot_description -x 19 -y 2"/>
+				</group>
+
+	<group ns="quadrotor98">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner98" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor98 -param robot_description -x 19 -y 3"/>
+				</group>
+
+	<group ns="quadrotor99">
+		<param name="robot_description" command="cat $(find cuda_swarm)/urdf/quadrotor.xml"/>
+		<node name="urdf_spawner99" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+			args="-urdf -model quadrotor99 -param robot_description -x 19 -y 4"/>
+				</group>
+
+</launch>
