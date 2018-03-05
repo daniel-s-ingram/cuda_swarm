@@ -19,10 +19,12 @@ z = 0
 while not rospy.is_shutdown():
 	for i in xrange(25):
 		quaternion = quaternion_from_euler(0, 0, z)
+
 		swarm_msg[i].pose.orientation.x = quaternion[0]
 		swarm_msg[i].pose.orientation.y = quaternion[1]
 		swarm_msg[i].pose.orientation.z = quaternion[2]
 		swarm_msg[i].pose.orientation.w = quaternion[3]
-		swarm_pub[i].publish(swarm_msg[i])
 
+		swarm_pub[i].publish(swarm_msg[i])
+		
 	z = z + 0.01
