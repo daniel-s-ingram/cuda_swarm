@@ -38,4 +38,6 @@ int main(int argc, char **argv)
 		}
 		t += 0.001;
 	}
+
+	free(swarm_pub); free(swarm_msg);
 }
