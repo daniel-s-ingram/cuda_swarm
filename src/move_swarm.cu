@@ -5,6 +5,7 @@
 
 #include "ros/ros.h"
 #include "gazebo_msgs/ModelState.h"
+#include "tf/tf.h"
 
 #include "cuda.h"
 
@@ -22,14 +23,21 @@ int main(int argc, char **argv)
 		swarm_msg[i].model_name = "quadrotor" + boost::lexical_cast<std::string>(i);
 	}
 
-	int t = 0;
+	float t = 0;
+	tf::Quaternion quaternion;
 	while (ros::ok())
 	{
 		for (int i = 0; i < 100; i++)
 		{
-			swarm_msg[i].pose.position.x = 2.5*sin(t) + i/10;
-			swarm_msg[i].pose.position.y = 2.5*sin(t) + i%10;
-			swarm_msg[i].pose.position.z = 2;
+			quaternion = tf::createQuaternionFromRPY(-0.5*cos(t), 0.5*cos(t), 0);
+			swarm_msg[i].pose.position.x = sin(t) + i/10;
+			swarm_msg[i].pose.position.y = sin(t) + i%10;
+			swarm_msg[i].pose.position.z = sin(t+i) + 2;
+
+			swarm_msg[i].pose.orientation.x = quaternion[0];
+			swarm_msg[i].pose.orientation.y = quaternion[1];
+			swarm_msg[i].pose.orientation.z = quaternion[2];
+			swarm_msg[i].pose.orientation.w = quaternion[3];
 
 			swarm_pub[i].publish(swarm_msg[i]);
 		}
