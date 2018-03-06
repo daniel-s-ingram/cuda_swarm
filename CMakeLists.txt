@@ -5,6 +5,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   gazebo_msgs
+  tf
 )
 
 find_package(CUDA REQUIRED)
