@@ -9,7 +9,7 @@
 
 #include "cuda.h"
 
-__global__ void trajectories(void)
+__global__ void trajectories(gazebo_msgs::ModelState *msg, tf::Quaternion *quat, float t)
 {
 
 }
@@ -46,9 +46,10 @@ int main(int argc, char **argv)
 	tf::Quaternion quaternion;
 	while (ros::ok())
 	{
+		quaternion = tf::createQuaternionFromRPY(-0.5*cos(t), 0.5*cos(t), 0);
+		
 		for (int i = 0; i < 100; i++)
 		{
-			quaternion = tf::createQuaternionFromRPY(-0.5*cos(t), 0.5*cos(t), 0);
 			swarm_msg[i].pose.position.x = sin(t) + i/10;
 			swarm_msg[i].pose.position.y = sin(t) + i%10;
 			swarm_msg[i].pose.position.z = sin(t+i) + 2;
