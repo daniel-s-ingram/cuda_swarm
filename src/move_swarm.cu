@@ -13,11 +13,8 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "move_swarm");
 	ros::NodeHandle node;
 
-	ros::Publisher *swarm_pub;
-	gazebo_msgs::ModelState *swarm_msg;
-
-	swarm_pub = (ros::Publisher *)malloc(100*sizeof(ros::Publisher));
-	swarm_msg = (gazebo_msgs::ModelState *)malloc(100*sizeof(gazebo_msgs::ModelState));
+	ros::Publisher *swarm_pub = new ros::Publisher[100];
+	gazebo_msgs::ModelState *swarm_msg = new gazebo_msgs::ModelState[100];
 
 	for (int i = 0; i < 100; i++)
 	{
@@ -39,5 +36,6 @@ int main(int argc, char **argv)
 		t += 0.001;
 	}
 
-	free(swarm_pub); free(swarm_msg);
+	delete[] swarm_pub; 
+	delete[] swarm_msg;
 }
