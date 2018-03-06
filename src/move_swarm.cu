@@ -9,6 +9,11 @@
 
 #include "cuda.h"
 
+__global__ void trajectories(void)
+{
+
+}
+
 int main(int argc, char **argv)
 {
 	ros::init(argc, argv, "move_swarm");
@@ -21,6 +26,20 @@ int main(int argc, char **argv)
 	{
 		swarm_pub[i] = node.advertise<gazebo_msgs::ModelState>("/gazebo/set_model_state", 1);
 		swarm_msg[i].model_name = "quadrotor" + boost::lexical_cast<std::string>(i);
+	}
+
+	cudaError_t error;
+	gazebo_msgs::ModelState *d_msg;
+	if ((error = cudaMalloc((void **)&d_msg, 100*sizeof(gazebo_msgs::ModelState))) != cudaSuccess)
+	{
+		printf("Error allocating d_a: %s in %s on line %d\n", cudaGetErrorString(error), __FILE__, __LINE__);
+		exit(EXIT_FAILURE);
+	}
+
+	if ((error = cudaMemcpy(d_msg, swarm_msg, 100*sizeof(gazebo_msgs::ModelState), cudaMemcpyHostToDevice)) != cudaSuccess)
+	{
+		printf("Error copying a to d_a: %s in %s on line %d\n", cudaGetErrorString(error), __FILE__, __LINE__);
+		exit(EXIT_FAILURE);
 	}
 
 	float t = 0;
