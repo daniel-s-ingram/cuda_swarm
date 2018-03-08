@@ -14,14 +14,17 @@ __global__ void trajectories(gazebo_msgs::ModelState *msg, float x, float y, flo
 {
 	int i = threadIdx.x + blockIdx.x * blockDim.x;
 
-	msg[i].pose.position.x = sin(t) + i/10;
-	msg[i].pose.position.y = sin(t) + i%10;
-	msg[i].pose.position.z = sin(t+i) + 2;
+	if (i < 100)
+	{
+		msg[i].pose.position.x = sin(t) + i/10;
+		msg[i].pose.position.y = sin(t) + i%10;
+		msg[i].pose.position.z = sin(t+i) + 2;
 
-	msg[i].pose.orientation.x = x;
-	msg[i].pose.orientation.y = y;
-	msg[i].pose.orientation.z = z;
-	msg[i].pose.orientation.w = w;
+		msg[i].pose.orientation.x = x;
+		msg[i].pose.orientation.y = y;
+		msg[i].pose.orientation.z = z;
+		msg[i].pose.orientation.w = w;
+	}
 }
 
 int main(int argc, char **argv)
@@ -60,15 +63,15 @@ int main(int argc, char **argv)
 	{
 		q = tf::createQuaternionFromRPY(-0.5*cos(t), 0.5*cos(t), 0);
 
-		initial = clock();
+		//initial = clock();
 		trajectories<<<100,512>>>(d_msg, q[0], q[1], q[2], q[3], t);
 		cudaMemcpy(swarm_msg, d_msg, msg_size, cudaMemcpyDeviceToHost);
 		for (int i = 0; i < 100; i++) swarm_pub.publish(swarm_msg[i]);
-		final = clock();
+		//final = clock();
 
-		std::cout << "Time taken by GPU: " << (double)(final-initial)/CLOCKS_PER_SEC << std::endl;
+		//std::cout << "Time taken by GPU: " << (double)(final-initial)/CLOCKS_PER_SEC << std::endl;
 
-		initial = clock();
+		/*initial = clock();
 		for (int i = 0; i < 100; i++)
 		{
 			swarm_msg[i].pose.position.x = sin(t) + i/10;
@@ -84,7 +87,7 @@ int main(int argc, char **argv)
 		}
 		final = clock();
 
-		std::cout << "Time taken by CPU: " << (double)(final-initial)/CLOCKS_PER_SEC << std::endl;
+		std::cout << "Time taken by CPU: " << (double)(final-initial)/CLOCKS_PER_SEC << std::endl;*/
 		
 		t += 0.001;
 	}
